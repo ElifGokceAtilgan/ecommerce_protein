@@ -10,8 +10,8 @@ Graphiql Queries:
 
 mutation CreateCustomerMutation{
   createCustomer(input: {
-    name: "customer",
-    surname: "customer surname",
+    name: "customer_name",
+    surname: "customer_surname",
     email: "customer_new@example.com",
     phone: "1111111"
   }) {
