@@ -106,4 +106,9 @@ query GetCustomerOrders {
   }
 }
 
+
+![Screenshot from 2024-05-19 23-38-55](https://github.com/ElifGokceAtilgan/ecommerce_protein/assets/83187400/39ac3988-5be8-41e7-8cd6-caf9b945c22b)
+
+
+
 ![Screenshot from 2024-05-19 23-40-10](https://github.com/ElifGokceAtilgan/ecommerce_protein/assets/83187400/c8d28e29-c794-4325-a785-9a9f8bceac53)
