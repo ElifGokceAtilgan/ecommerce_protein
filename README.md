@@ -105,3 +105,5 @@ query GetCustomerOrders {
     quantities
   }
 }
+
+![Screenshot from 2024-05-19 23-40-10](https://github.com/ElifGokceAtilgan/ecommerce_protein/assets/83187400/c8d28e29-c794-4325-a785-9a9f8bceac53)
