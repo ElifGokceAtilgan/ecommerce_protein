@@ -2,10 +2,6 @@
 
 Ruby on Rails (API Mode) e-commerce application
 
-You can find GraphQL Queries also the path:
-
-config/initializers/graphiql.rb
-
 Graphiql Queries:
 
 #new user registration
