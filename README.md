@@ -1,6 +1,8 @@
 # README
 
-Ruby on Rails (API Mode) e-commerce application
+Ruby on Rails (API Mode) e-commerce application.
+
+For the product creation process, you can look at the seeds.rb file and create it with rails db:seeds, you can update the stock_quantity values for stock control.
 
 Graphiql Queries:
 
