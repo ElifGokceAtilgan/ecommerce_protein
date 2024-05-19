@@ -1,106 +1,24 @@
-# rails-api-only-e-commerce-application
-Ruby on Rails e-commerce application which have an API only.
-GraphQL Queries:
+# README
 
-#new user registration
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-mutation CreateCustomerMutation{
-  createCustomer(input: {
-    name: "customer",
-    surname: "customer surname",
-    email: "customer_new@example.com",
-    phone: "1111111"
-  }) {
-    customer {
-      id
-      name
-      surname
-      email
-      phone
-    }
-    errors
-  }
-}
+Things you may want to cover:
 
-#Get customers list
+* Ruby version
 
-query ListCustomersQuery {
-  customers {
-    id
-    name
-    surname
-    email
-    phone
-  }
-}
+* System dependencies
 
-#Get products list
+* Configuration
 
-query ListProductsQuery {
-  products {
-    id
-    name
-    price
-    stockQuantity
-  }
-}
+* Database creation
 
-#Adding the product to customer's cart with quantity parameter
+* Database initialization
 
-mutation AddProductToCart {
-  addProductToCart(input: { customerId: "2", productId: "5", quantity: 2 }) {
-    success
-  }
-}
+* How to run the test suite
 
-#To view a specific customer's cart
+* Services (job queues, cache servers, search engines, etc.)
 
-query CustomerCart {
-  customerCart(customerId: "2") {
-    id
-    customer {
-      id
-      name
-      surname
-      email
-      phone
-    }
-    cartItems {
-      id
-      product {
-        id
-        name
-        price
-      }
-      quantity
-    }
-  }
-}
+* Deployment instructions
 
-#Creating order for specific customer
-
-mutation CreateOrder {
-  createOrder(input: { customerId: "2" }) {
-    success
-  }
-}
-
-#Get customers Orders with product details
-
-query GetCustomerOrders {
-  customerOrders(customerId: "2") {
-    id
-    customer {
-      id
-      name
-      email
-    }
-    products {
-      id
-      name
-      price
-    }
-    quantities
-  }
-}
-
+* ...

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  ecommerce_protein:
+    build: .
+    command: "bundle exec rails s -p 3000 -b '0.vscod0.0.0'"
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://ecommerce_protein_user:pass159000@db:5432/ecommerce_protein_development
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ecommerce_protein_development
+      POSTGRES_USER: ecommerce_protein_user
+      POSTGRES_PASSWORD: pass159000
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
