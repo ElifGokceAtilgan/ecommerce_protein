@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GraphiQL</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'graphiql/rails/application', media: 'all' %>
+    <%= javascript_include_tag 'graphiql/rails/application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div id="graphiql-container"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        function graphQLFetcher(graphQLParams) {
+
+          return fetch('/graphql', {
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(graphQLParams),
+          }).then(function(response) {
+            return response.json();
+          }).catch(function(error) {
+            console.error("Error fetching data:", error);
+          });
+        }
+
+        ReactDOM.render(
+          React.createElement(GraphiQL, {
+            fetcher: graphQLFetcher,
+          }),
+          document.getElementById('graphiql-container')
+        );
+      });
+    </script>
+  </body>
+</html>
