@@ -1,24 +1,102 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails (API Mode) e-commerce application
 
-Things you may want to cover:
+You can find GraphQL Queries also the path: 
+queriesconfig/initializers/graphiql.rb
 
-* Ruby version
+Graphiql Queries:
+#new user registration
+mutation CreateCustomerMutation{
+  createCustomer(input: {
+    name: "customer",
+    surname: "customer surname",
+    email: "customer_new@example.com",
+    phone: "1111111"
+  }) {
+    customer {
+      id
+      name
+      surname
+      email
+      phone
+    }
+    errors
+  }
+}
 
-* System dependencies
+#Get customers list
+query ListCustomersQuery {
+  customers {
+    id
+    name
+    surname
+    email
+    phone
+  }
+}
 
-* Configuration
+#Get products list
+query ListProductsQuery {
+  products {
+    id
+    name
+    price
+    stockQuantity
+  }
+}
 
-* Database creation
+#Adding the product to customer's cart with quantity parameter
+mutation AddProductToCart {
+  addProductToCart(input: { customerId: "2", productId: "5", quantity: 2 }) {
+    success
+  }
+}
 
-* Database initialization
+#To view a specific customer's cart
+query CustomerCart {
+  customerCart(customerId: "2") {
+    id
+    customer {
+      id
+      name
+      surname
+      email
+      phone
+    }
+    cartItems {
+      id
+      product {
+        id
+        name
+        price
+      }
+      quantity
+    }
+  }
+}
 
-* How to run the test suite
+#Creating order for specific customer
+mutation CreateOrder {
+  createOrder(input: { customerId: "2" }) {
+    success
+  }
+}
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#Get customers Orders with product details
+query GetCustomerOrders {
+  customerOrders(customerId: "2") {
+    id
+    customer {
+      id
+      name
+      email
+    }
+    products {
+      id
+      name
+      price
+    }
+    quantities
+  }
+}
