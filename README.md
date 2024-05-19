@@ -3,6 +3,7 @@ Ruby on Rails e-commerce application which have an API only.
 GraphQL Queries:
 
 #new user registration
+
 mutation CreateCustomerMutation{
   createCustomer(input: {
     name: "customer",
@@ -22,6 +23,7 @@ mutation CreateCustomerMutation{
 }
 
 #Get customers list
+
 query ListCustomersQuery {
   customers {
     id
@@ -33,6 +35,7 @@ query ListCustomersQuery {
 }
 
 #Get products list
+
 query ListProductsQuery {
   products {
     id
@@ -43,6 +46,7 @@ query ListProductsQuery {
 }
 
 #Adding the product to customer's cart with quantity parameter
+
 mutation AddProductToCart {
   addProductToCart(input: { customerId: "2", productId: "5", quantity: 2 }) {
     success
@@ -50,6 +54,7 @@ mutation AddProductToCart {
 }
 
 #To view a specific customer's cart
+
 query CustomerCart {
   customerCart(customerId: "2") {
     id
@@ -73,6 +78,7 @@ query CustomerCart {
 }
 
 #Creating order for specific customer
+
 mutation CreateOrder {
   createOrder(input: { customerId: "2" }) {
     success
@@ -80,6 +86,7 @@ mutation CreateOrder {
 }
 
 #Get customers Orders with product details
+
 query GetCustomerOrders {
   customerOrders(customerId: "2") {
     id
